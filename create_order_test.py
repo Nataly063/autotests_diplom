@@ -1,3 +1,4 @@
+# Хорина Наталья, 48-я когорта - Финальный проект. Инженер по тестированию плюс 
 import configuration
 import data
 import requests

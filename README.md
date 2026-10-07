@@ -20,7 +20,7 @@
 
 ⚙️ Настройка перед запуском
 Перед запуском теста убедитесь, что в файле `configuration.py` указан актуальный `BASE_URL` вашего тестового стенда.
-Текущий URL: https://c090fe8c-afe5-4d93-a5e9-0438a0504e78.serverhub.praktikum-services.ru 
+Текущий URL:  https://ec42c970-4cd1-4a27-975f-2c501820fb6f.serverhub.praktikum-services.ru
 
 
 Запуск теста:
