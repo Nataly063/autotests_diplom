@@ -1,29 +1,18 @@
 # Хорина Наталья, 48-я когорта - Финальный проект. Инженер по тестированию плюс 
-import configuration
-import data
-import requests
+import sender_stand_request
 
-    # URL для создания заказа
-create_order_url = f"{configuration.BASE_URL}/api/v1/orders" 
-
-   # URL для получения заказа
-get_order_url = f"{configuration.BASE_URL}/api/v1/orders/track" 
-   
 
 # Функция для позитивной проверки получения заказа по треку заказа
 def test_create_order_and_get_by_track():
 
     # запрос на создание заказа
-    create_response = requests.post(
-        create_order_url,
-        json=data.order_body
-    )
+    create_response = sender_stand_request.post_new_order()
         
     # проверка успешного сохранения трека заказа
-    track_number = create_response.json().get("track")
+    track_number = create_response.json()["track"]
    
     # запрос на получение заказа по номеру трека
-    get_response = requests.get(get_order_url, params={"t":track_number})
+    get_response = sender_stand_request.get_order_by_track(track_number)
 
     # проверка кода ответа 200
     assert get_response.status_code == 200
